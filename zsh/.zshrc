@@ -16,6 +16,8 @@ export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
 # Plugins
 source ./plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ./plugins/highlighting/zsh-syntax-highlighting.zsh
+  # Zoxyde and fzf brew install fzf zoxyde
+eval "$(zoxide init zsh)"
 
 #Aliases
 alias rld="source ./.zshrc"
