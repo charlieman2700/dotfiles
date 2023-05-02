@@ -14,13 +14,14 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
 
 # Plugins
-source ./plugins/powerlevel10k/powerlevel10k.zsh-theme
-source ./plugins/highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source ~/dotfiles/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh
   # Zoxyde and fzf brew install fzf zoxyde
 eval "$(zoxide init zsh)"
 
 #Aliases
 alias rld="source ./.zshrc"
+alias ls="lsd"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
