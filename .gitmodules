@@ -1,3 +1,6 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/plugins/highlighting"]
+	path = zsh/plugins/highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
