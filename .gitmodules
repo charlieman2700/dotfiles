@@ -7,3 +7,6 @@
 [submodule "zsh/plugins/vimZsh"]
 	path = zsh/plugins/vimZsh
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
