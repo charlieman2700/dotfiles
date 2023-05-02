@@ -16,6 +16,7 @@ export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
 # Plugins
 source ~/dotfiles/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ~/dotfiles/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/plugins/vimZsh/zsh-vi-mode.plugin.zsh
   # Zoxyde and fzf brew install fzf zoxyde
 eval "$(zoxide init zsh)"
 
