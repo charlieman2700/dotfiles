@@ -10,3 +10,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "zsh/plugins/completions"]
+	path = zsh/plugins/completions
+	url = https://github.com/zsh-users/zsh-completions.git

@@ -11,4 +11,5 @@ Run:
 lsd \
 zoxyde \
 --cask wezterm \
+lf \
 
