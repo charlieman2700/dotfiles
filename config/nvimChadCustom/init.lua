@@ -40,8 +40,5 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua vim.diagnostic.goto_next()<CR>",
 	{ noremap = true, silent = true, desc = "Next Diagnostic" }
 )
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+-- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
+vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })
