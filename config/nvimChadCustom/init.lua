@@ -7,8 +7,8 @@ vim.keymap.set("v", "mm", "%", { desc = "Get matching symbol" })
 
 -- vim.api.nvim_command("set clipboard=")
 vim.opt.clipboard = ""
-vim.api.nvim_set_keymap('n', '<C-c>', '"+y', { noremap = true })
-vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-c>", '"+y', { noremap = true })
+vim.api.nvim_set_keymap("v", "<C-c>", '"+y', { noremap = true })
 -- vim.opt.mouse = ""
 
 -- Remap vertical movement
@@ -22,6 +22,24 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Search up", noremap = true })
 -- Map redo
 vim.keymap.set("n", "U", ":redo<CR>", { desc = "Redo" })
 
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>ldf",
+	"<cmd>lua vim.diagnostic.open_float()<CR>",
+	{ noremap = true, silent = true, desc = "Float Diagnostic" }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>lk",
+	"<cmd>lua vim.diagnostic.goto_prev()<CR>",
+	{ noremap = true, silent = true, desc = "Prev Diagnostic" }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>lj",
+	"<cmd>lua vim.diagnostic.goto_next()<CR>",
+	{ noremap = true, silent = true, desc = "Next Diagnostic" }
+)
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
