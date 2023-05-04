@@ -13,18 +13,21 @@ export PATH="$PATH:/usr/local/lib/node_modules/node/bin";
 export PATH=$PATH:binDirectoryPath
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config" #For lazygit
 
 # Plugins
 source ~/dotfiles/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ~/dotfiles/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/plugins/vimZsh/zsh-vi-mode.plugin.zsh
 source ~/dotfiles/zsh/lfcd.sh
+source ~/dotfiles/zsh/tmuxSession.sh
 
 
 
 #Aliases
 alias rld="source ~/.zshrc"
 alias ls="lsd"
+alias tn="tmux_new_session"
 
 #Bind
 bindkey -s '^o' 'lfcd\n'  # zsh lf file manager cd on exit

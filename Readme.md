@@ -12,4 +12,8 @@ lsd \
 zoxyde \
 --cask wezterm \
 lf \
+lazygit \
+ydiff
+
+
 
