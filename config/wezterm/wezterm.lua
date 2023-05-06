@@ -15,10 +15,14 @@ end
 
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
-config.font_size=20
+config.font_size=12
 config.window_decorations= 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = 'Gruvbox Material (Gogh)'
+config.adjust_window_size_when_changing_font_size = false
+config.window_background_opacity = 0.5
+
 -- and finally, return the configuration to wezterm
+-- 
 return config
 
