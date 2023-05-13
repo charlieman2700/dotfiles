@@ -23,22 +23,26 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Search up", noremap = true })
 vim.keymap.set("n", "U", ":redo<CR>", { desc = "Redo" })
 
 vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ldf",
-	"<cmd>lua vim.diagnostic.open_float()<CR>",
-	{ noremap = true, silent = true, desc = "Float Diagnostic" }
+  "n",
+  "<leader>ldf",
+  "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { noremap = true, silent = true, desc = "Float Diagnostic" }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<leader>lk",
-	"<cmd>lua vim.diagnostic.goto_prev()<CR>",
-	{ noremap = true, silent = true, desc = "Prev Diagnostic" }
+  "n",
+  "<leader>lk",
+  "<cmd>lua vim.diagnostic.goto_prev()<CR>",
+  { noremap = true, silent = true, desc = "Prev Diagnostic" }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<leader>lj",
-	"<cmd>lua vim.diagnostic.goto_next()<CR>",
-	{ noremap = true, silent = true, desc = "Next Diagnostic" }
+  "n",
+  "<leader>lj",
+  "<cmd>lua vim.diagnostic.goto_next()<CR>",
+  { noremap = true, silent = true, desc = "Next Diagnostic" }
 )
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
 vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })
+
+vim.g.copilot_no_tab_map = true
+vim.cmd([[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]])
+

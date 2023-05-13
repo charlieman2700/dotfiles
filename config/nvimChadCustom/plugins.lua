@@ -1,4 +1,4 @@
-local overrides = require "custom.configs.overrides"
+local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -20,7 +20,7 @@ local plugins = {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("todo-comments").setup {}
+      require("todo-comments").setup({})
     end,
   },
 
@@ -28,7 +28,7 @@ local plugins = {
     "ThePrimeagen/harpoon",
     lazy = false,
     config = function()
-      require "custom.configs.harpoon"
+      require("custom.configs.harpoon")
     end,
   },
 
@@ -36,7 +36,7 @@ local plugins = {
     "Shatur/neovim-session-manager",
     lazy = false,
     config = function()
-      require "custom.configs.session-manager"
+      require("custom.configs.session-manager")
     end,
   },
 
@@ -49,13 +49,13 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
@@ -119,24 +119,39 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     init = function()
-      require("telescope").load_extension "ui-select"
+      require("telescope").load_extension("ui-select")
     end,
   },
 
   { "nvim-telescope/telescope-ui-select.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
-  { "christoomey/vim-tmux-navigator", lazy = false },
+  { "christoomey/vim-tmux-navigator",          lazy = false },
 
   {
     "tpope/vim-fugitive",
     lazy = false,
     config = function()
-      require "custom.configs.fugitive"
+      require("custom.configs.fugitive")
     end,
   },
+
+  {
+    "mfussenegger/nvim-dap",
+    lazy = false,
+    dependencies = {
+      "ravenxrz/DAPInstall.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-telescope/telescope-dap.nvim",
+    },
+    config = function()
+      require("custom.configs.dap")
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
+  --   lazy = false,
   -- },
 }
 
