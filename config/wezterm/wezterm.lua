@@ -15,19 +15,13 @@ end
 
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
-config.font_size=12
+config.font_size=16
 config.window_decorations= 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = 'Ayu Mirage'
 config.adjust_window_size_when_changing_font_size = false
-config.window_background_opacity = 0.8
+--config.window_background_opacity = 0.8
 
-wezterm.on_key_down = function(_, input_event)
-  if input_event.key == "super_l" then
-    wezterm.grab_keyboard_focus(wezterm.window, "meta", "f12")
-    return true
-  end
-end
 
 
 

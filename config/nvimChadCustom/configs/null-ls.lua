@@ -10,7 +10,7 @@ local sources = {
 
 	-- webdev stuff
 	b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-	b.formatting.prettier.with({ filetypes = { "html", "markdown", "css", "svelte", "vue" } }), -- so prettier works only on these filetypes
+	b.formatting.prettier.with({ filetypes = { "html", "markdown", "css", "svelte", "vue" } }),
 
 	-- Lua
 	b.formatting.stylua,
@@ -18,6 +18,9 @@ local sources = {
 	-- cpp
 	b.formatting.clang_format,
 	b.diagnostics.cpplint.with({ args = { "--filter=-legal", "$FILENAME" } }),
+
+	-- Rust
+	b.formatting.rustfmt.with({ extra_args = { "--edition=2021" } }),
 }
 
 null_ls.setup({
