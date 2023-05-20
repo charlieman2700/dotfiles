@@ -6,10 +6,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ typeset -aU path
+
+
 # Paths
 export PATH="$PATH:/Users/charlie/development/flutter/bin"
 export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config" #For lazygit
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Plugins
 source ~/dotfiles/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
@@ -43,5 +48,3 @@ bindkey '\e[B' history-beginning-search-forward
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # Fig post block. Keep at the bottom of this file.
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="~/.local/bin:$PATH"

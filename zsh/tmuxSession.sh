@@ -19,21 +19,24 @@ function tmux_new_session() {
   # Correr Neovim en la primera ventana
   tmux send-keys -t "$nombre_sesion":0.0 "nvim" Enter
 
+  tmux new-window -t "$nombre_sesion" -n MiOtraVentana
+
   # Crear una nueva ventana llamada Git y correr Lazygit
   tmux new-window -t "$nombre_sesion" -n Git
-  tmux send-keys -t "$nombre_sesion":1 "lazygit" Enter
+  tmux send-keys -t "$nombre_sesion":2 "lazygit" Enter
 
   # Crear un split horizontal en la ventana de Git
-  tmux split-window -t "$nombre_sesion":1
+  tmux split-window -t "$nombre_sesion":2
   # Obtener el tamaño actual del panel vertical en líneas
-  tmux resize-pane -t "$nombre_sesion":1.1 -y 2
+  tmux resize-pane -t "$nombre_sesion":2.1 -y 2
   # Seleccione el panel de lazygit
-  tmux select-pane -t "$nombre_sesion":1.0
+  tmux select-pane -t "$nombre_sesion":2.0
+
+  tmux select-window -t "$nombre_sesion":0
+
+  tmux attach-session -t "$nombre_sesion"
 
   # Crear una nueva ventana y volver a la primera
-  tmux new-window -t "$nombre_sesion" -n MiOtraVentana
-  tmux select-window -t "$nombre_sesion":0
-  tmux attach-session -t "$nombre_sesion"
   fi
 }
 
