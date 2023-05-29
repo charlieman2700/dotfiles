@@ -72,14 +72,37 @@ M.nvimtree = {
 	git = {
 		enable = true,
 	},
-
 	renderer = {
-		highlight_git = true,
+		highlight_git = false,
 		icons = {
 			show = {
-				git = true,
+				git = false,
 			},
-		},
+
+		glyphs = {
+        default = "󰈚",
+        symlink = "",
+        folder = {
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
+    },
 	},
 }
 

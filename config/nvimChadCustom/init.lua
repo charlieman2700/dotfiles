@@ -46,4 +46,5 @@ vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { n
 
 vim.g.copilot_no_tab_map = true
 vim.cmd([[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]])
+-- asdf
 

@@ -4,26 +4,24 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 capabilities.offsetEncoding = { "utf-16" } -- this is the default
 
--- vim.cmd([[autocmd FileType handlebars setlocal filetype=html]])
-
+vim.cmd([[autocmd FileType handlebars setlocal filetype=html]])
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
 	"cssls",
 	"tsserver",
 	"tailwindcss",
+  "html",
 	"bashls",
-	"emmet_ls",
 	"svelte",
 	"jsonls",
 	"clangd",
-	"eslint",
 	"intelephense",
-  "ember",
+  "emmet_ls",
+	"ember",
 	"volar",
-  "html",
 	"cmake",
-  "prismals"
+	"prismals",
 }
 
 for _, lsp in ipairs(servers) do
@@ -33,16 +31,14 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
--- lspconfig.html.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = { "handlebars", "html" },
---   init_options = {
---     configurationSection = { "html", "css", "javascript" },
---     embeddedLanguages = {
---       css = true,
---       javascript = true,
---     },
---   },
--- })
---
+lspconfig.eslint.setup({
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+})
+
+

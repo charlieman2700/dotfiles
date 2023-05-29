@@ -9,11 +9,10 @@ local b = null_ls.builtins
 local sources = {
 
 	-- webdev stuff
-	b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+	-- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
 	b.formatting.prettier.with({ filetypes = { "html", "markdown", "css", "svelte", "vue" } }),
-	b.formatting.eslint_d.with({ filetypes = { "typescript", "javascript" } }),
-	-- Prisma
-	b.formatting.prismaFmt,
+
+  -- EsLint
 
 	-- Hbs
 	b.formatting.djlint.with({ filetypes = { "handlebars", "hbs" } }),
