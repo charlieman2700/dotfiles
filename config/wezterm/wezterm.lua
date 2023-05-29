@@ -12,10 +12,11 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-
+-- config.font = wezterm.font 'JetbrainsMono Nerd Font'
+wezterm.font('JetbrainsMono Nerd Font', { weight = 'Bold', italic = true })
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
-config.font_size=16
+config.font_size=18
 config.window_decorations= 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = 'Ayu Mirage'

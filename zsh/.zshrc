@@ -40,7 +40,6 @@ alias tn="tmux_new_session"
 alias cl="clear"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #Bind
 # bindkey -s '^o' 'lfcd\n'  # Control O zsh lf file manager cd on exit
 bindkey '\e[A' history-beginning-search-backward
@@ -48,3 +47,4 @@ bindkey '\e[B' history-beginning-search-forward
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # Fig post block. Keep at the bottom of this file.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

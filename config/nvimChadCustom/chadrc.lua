@@ -6,8 +6,8 @@ local highlights = require("custom.highlights")
 
 M.ui = {
 
-	theme = "charlie",
-	theme_toggle = { "charlie", "one_light" },
+	theme = "everblush",
+	theme_toggle = { "everblush", "one_light" },
 	hl_add = highlights.add,
 	nvdash = {
 		load_on_startup = true,
