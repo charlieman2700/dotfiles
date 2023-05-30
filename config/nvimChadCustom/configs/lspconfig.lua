@@ -4,7 +4,9 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 capabilities.offsetEncoding = { "utf-16" } -- this is the default
 
-vim.cmd([[autocmd FileType handlebars setlocal filetype=html]])
+-- vim.cmd([[autocmd FileType handlebars setlocal filetype=html]])
+-- vim.cmd('autocmd FileType tera setlocal filetype=handlebars')
+
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
