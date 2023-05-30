@@ -19,7 +19,6 @@ local servers = {
 	"jsonls",
 	"clangd",
 	"intelephense",
-  "emmet_ls",
 	"ember",
 	"volar",
 	"cmake",
@@ -41,6 +40,13 @@ lspconfig.eslint.setup({
 			command = "EslintFixAll",
 		})
 	end,
+})
+
+lspconfig.emmet_ls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"handlebars", "hbs", "html"}
+
 })
 
 
