@@ -6,9 +6,12 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local options = {
 	server = {
 		on_attach = on_attach,
-    capabilities =capabilities,
+		capabilities = capabilities,
 		settings = {
 			["rust-analyzer"] = {
+				files = {
+					excludeDirs = { "target", "node_modules", ".git" },
+				},
 				imports = {
 					granularity = {
 						group = "module",

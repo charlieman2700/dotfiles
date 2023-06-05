@@ -7,13 +7,11 @@ capabilities.offsetEncoding = { "utf-16" } -- this is the default
 -- vim.cmd([[autocmd FileType handlebars setlocal filetype=html]])
 -- vim.cmd('autocmd FileType tera setlocal filetype=handlebars')
 
-
 -- if you just want default config for the servers then put them in a table
 local servers = {
 	"cssls",
 	"tsserver",
 	"tailwindcss",
-  "html",
 	"bashls",
 	"svelte",
 	"jsonls",
@@ -22,6 +20,7 @@ local servers = {
 	"ember",
 	"volar",
 	"cmake",
+	"csharp_ls",
 	"prismals",
 }
 
@@ -43,10 +42,21 @@ lspconfig.eslint.setup({
 })
 
 lspconfig.emmet_ls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = {"handlebars", "hbs", "html"}
-
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "handlebars", "hbs", "html" },
 })
 
-
+lspconfig.html.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "handlebars", "html", "css" },
+	{
+		configurationSection = { "html", "css", "javascript", "handlebasrs" },
+		embeddedLanguages = {
+			css = true,
+			javascript = true,
+		},
+		provideFormatter = true,
+	},
+})

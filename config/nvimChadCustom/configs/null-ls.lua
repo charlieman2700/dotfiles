@@ -10,12 +10,25 @@ local sources = {
 
 	-- webdev stuff
 	-- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-	b.formatting.prettier.with({ filetypes = { "html", "markdown", "css", "svelte", "vue" } }),
+	b.formatting.prettier.with({
+		filetypes = {
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+      "rust_analyzer",
+			"html",
+			"markdown",
+			"css",
+			"svelte",
+			"vue",
+		},
+	}),
 
-  -- EsLint
+	-- EsLint
 
 	-- Hbs
-	b.formatting.djlint.with({ filetypes = { "handlebars", "hbs" } }),
+	b.formatting.djlint.with({ filetypes = { "handlebars", "hbs" }, extra_args = { "--indent", "2" } }),
 	-- Lua
 	b.formatting.stylua,
 
