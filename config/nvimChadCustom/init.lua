@@ -48,3 +48,41 @@ vim.g.copilot_no_tab_map = true
 vim.cmd([[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]])
 -- asdf
 
+if vim.g.neovide then
+	vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
+	vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
+	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
+	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+
+	-- This is a lua config, I want that after start nvim execute a command but after 5ms
+	-- because I want to wait for the neovide to load
+	-- The above is not running
+
+	-- Define la función para cargar el dashboard
+
+	vim.cmd("autocmd VimEnter * Nvdash")
+	vim.cmd("autocmd VimEnter * Nvdash")
+	vim.cmd("autocmd VimEnter * Nvdash")
+	vim.cmd("autocmd VimEnter * Nvdash")
+	vim.cmd("autocmd VimEnter * Nvdash")
+
+	vim.g.neovide_padding_top = 2
+	vim.g.neovide_padding_bottom = 2
+	vim.g.neovide_padding_right = 2
+	vim.g.neovide_padding_left = 2
+	vim.o.guifont = "JetbrainsMono Nerd Font:h18" -- text below applies for VimScript
+
+	vim.g.neovide_scale_factor = 1.0
+	local change_scale_factor = function(delta)
+		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+	end
+	vim.keymap.set("n", "<C-=>", function()
+		change_scale_factor(1.25)
+	end)
+	vim.keymap.set("n", "<C-->", function()
+		change_scale_factor(1 / 1.25)
+	end)
+end

@@ -180,6 +180,7 @@ local plugins = {
 			})
 		end,
 	},
+	{ "rose-pine/neovim", lazy = false },
 
 	-- To make a plugin not be loaded
 	-- {

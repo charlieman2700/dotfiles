@@ -10,13 +10,18 @@ local sources = {
 
 	-- webdev stuff
 	-- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-	b.formatting.prettier.with({
+
+	b.formatting.rustywind.with({
+		filetypes = { "html", "css", "scss", "svelte", "vue" },
+	}),
+
+	b.formatting.prettierd.with({
 		filetypes = {
 			"javascript",
 			"typescript",
 			"javascriptreact",
 			"typescriptreact",
-      "rust_analyzer",
+			"rust_analyzer",
 			"html",
 			"markdown",
 			"css",
@@ -32,8 +37,11 @@ local sources = {
 	-- Lua
 	b.formatting.stylua,
 
+	b.formatting.gofmt,
+	b.formatting.goimports_reviser,
 	-- cpp
 	b.formatting.clang_format,
+	b.formatting.prismaFmt,
 	-- b.diagnostics.cpplint.with({ args = { "--filter=-legal", "$FILENAME" } }),
 
 	-- Rust

@@ -10,10 +10,10 @@ local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
-
+-- JetbrainsMono Nerd Font
 -- This is where you actually apply your config choices
 -- config.font = wezterm.font 'JetbrainsMono Nerd Font'
-wezterm.font('JetbrainsMono Nerd Font', { weight = 'Bold', italic = true })
+config.font = wezterm.font('JetbrainsMono Nerd Font', { weight = 'Regular'} )
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
 config.font_size=18

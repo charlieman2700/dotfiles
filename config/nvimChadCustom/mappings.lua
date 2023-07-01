@@ -57,6 +57,8 @@ M.general = {
 
 		-- theme switcher
 		["<leader>th"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+
+
 	},
 }
 -- more keybinds!

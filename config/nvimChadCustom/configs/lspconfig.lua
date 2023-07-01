@@ -14,6 +14,7 @@ local servers = {
 	"tailwindcss",
 	"bashls",
 	"svelte",
+  "gopls",
 	"jsonls",
 	"clangd",
 	"intelephense",
@@ -44,13 +45,13 @@ lspconfig.eslint.setup({
 lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "handlebars", "hbs", "html" },
+	filetypes = { "handlebars", "hbs", "html", "javascriptreact", "typescriptreact" },
 })
 
 lspconfig.html.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "handlebars", "html", "css" },
+	filetypes = { "handlebars", "html", "css", },
 	{
 		configurationSection = { "html", "css", "javascript", "handlebasrs" },
 		embeddedLanguages = {
@@ -60,3 +61,5 @@ lspconfig.html.setup({
 		provideFormatter = true,
 	},
 })
+
+
