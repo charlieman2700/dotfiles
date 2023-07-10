@@ -14,7 +14,7 @@ local servers = {
 	"tailwindcss",
 	"bashls",
 	"svelte",
-  "gopls",
+	"gopls",
 	"jsonls",
 	"clangd",
 	"intelephense",
@@ -51,7 +51,7 @@ lspconfig.emmet_ls.setup({
 lspconfig.html.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "handlebars", "html", "css", },
+	filetypes = { "handlebars", "html", "css" },
 	{
 		configurationSection = { "html", "css", "javascript", "handlebasrs" },
 		embeddedLanguages = {
@@ -61,5 +61,15 @@ lspconfig.html.setup({
 		provideFormatter = true,
 	},
 })
+
+lspconfig.phpactor.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	init_options = {
+		["language_server_phpstan.enabled"] = false,
+		["language_server_psalm.enabled"] = false,
+	},
+})
+
 
 

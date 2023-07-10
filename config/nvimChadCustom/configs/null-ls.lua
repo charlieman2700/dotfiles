@@ -42,6 +42,8 @@ local sources = {
 	-- cpp
 	b.formatting.clang_format,
 	b.formatting.prismaFmt,
+
+	b.formatting.phpcsfixer,
 	-- b.diagnostics.cpplint.with({ args = { "--filter=-legal", "$FILENAME" } }),
 
 	-- Rust

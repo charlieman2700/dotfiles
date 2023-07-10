@@ -181,6 +181,20 @@ local plugins = {
 		end,
 	},
 	{ "rose-pine/neovim", lazy = false },
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("chatgpt").setup({
+				api_key_cmd = "echo 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",
+			})
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 
 	-- To make a plugin not be loaded
 	-- {

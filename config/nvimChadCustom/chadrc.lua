@@ -6,8 +6,8 @@ local highlights = require("custom.highlights")
 
 M.ui = {
 
-	theme = "rosepine",
-	theme_toggle = { "rosepine", "rosepine" },
+	theme = "tokyonight",
+	theme_toggle = { "tokyonight", "tokyonight" },
 	hl_add = highlights.add,
 	nvdash = {
 		load_on_startup = true,
